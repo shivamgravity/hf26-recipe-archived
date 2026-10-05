@@ -1,0 +1,6 @@
+streamlit
+pydantic
+sqlite3-api
+python-dotenv
+faster-whisper
+requests

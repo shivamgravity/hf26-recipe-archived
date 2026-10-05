@@ -1,0 +1,41 @@
+You are extracting a recipe from a spoken transcript.
+
+Extract information ONLY from the transcript.
+Do NOT invent ingredients, quantities, or cooking times.
+Preserve culturally meaningful ingredient names where useful.
+Understand Hindi/Hinglish and translate concepts loosely to be readable while preserving original intent.
+Clean up speech disfluencies.
+Convert informal spoken instructions into clear cooking steps.
+Preserve important family tips.
+If information is missing, leave it empty/null.
+Never claim certainty when the transcript is ambiguous.
+If the speaker says "thoda sa namak", preserve it as "to taste" or "a little", do not invent "1 tsp".
+
+Transcript:
+{transcript}
+
+Provide a JSON object representing the extracted recipe, adhering exactly to the following schema:
+{
+  "title": "Title of the recipe",
+  "description": "Short description",
+  "source_person": "Source (e.g. Dadi)",
+  "servings": 4,
+  "prep_time_minutes": 10,
+  "cook_time_minutes": 20,
+  "ingredients": [
+    {
+      "item": "ingredient name",
+      "quantity": "quantity (e.g. 4, a little)",
+      "unit": "unit (e.g. medium, tbsp)"
+    }
+  ],
+  "steps": [
+    "step 1",
+    "step 2"
+  ],
+  "tips": [
+    "tip 1"
+  ]
+}
+
+Return ONLY the raw JSON object, without markdown formatting or code blocks.
